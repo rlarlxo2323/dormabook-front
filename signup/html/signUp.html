@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>도르마북 | Sign Up</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css"/>
+</head>
+<body>
+<div class="container mt-3">
+    <div class="mb-4">
+        <div style="color: #00C473; font-size: 50px; font-weight: bold; flex-grow: 6.4">Dorma Book</div>
+    </div>
+    <div style="display: flex; flex-direction: column; height: 800px; margin-left: 320px; margin-right: 320px; margin-top: 80px;">
+        <form>
+            <div class="form-floating mb-4-5">
+                <input type="text" class="form-control" id="id" placeholder="ID" required>
+                <label for="id">ID</label>
+                <div style="text-align: right">이미 사용중인 ID 입니다. || 사용 가능한 ID 입니다.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" placeholder="Password" required
+                       pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="12" minlength="8">
+                <label for="password">Password</label>
+                <div style="color: gray; text-align: left">패스워드는 영문자, 숫자, 특수문자를 포함한 8~12자리입니다.</div>
+            </div>
+            <div class="form-floating mb-4-5">
+                <input type="password" class="form-control" id="rePassword" placeholder="RePassword" required
+                       pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="12" minlength="8">
+                <label for="password">Re:Password</label>
+                <div style="text-align: right">일치하지 않는 패스워드 입니다. || 올바른 패스워드 입니다.</div>
+            </div>
+            <div class="form-floating mb-4-5">
+                <input type="text" class="form-control" id="name" placeholder="홍길동" required>
+                <label for="name">이름</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="studentNo" placeholder="20220000" required
+                       pattern="[0-9]{8}" maxlength="8">
+                <label for="studentNo">학번</label>
+                <div style="text-align: left; color: gray;">ex) 20221234</div>
+            </div>
+            <div class="form-floating mb-5">
+                <input type="text" class="form-control" id="phone" placeholder="010-0000-0000" required
+                       pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
+                <label for="phone">휴대폰 번호</label>
+            </div>
+            <div class="form-floating mb-4-5">
+                <input type="text" class="form-control" id="college" placeholder="ICT 공과대학" required>
+                <label for="college">단과대학</label>
+            </div>
+            <div class="form-floating mb-5">
+                <input type="text" class="form-control" id="department" placeholder="컴퓨터소프트웨어공학" required>
+                <label for="department">학과</label>
+            </div>
+            <div class="mb-4" style="text-align: center">
+                <button type="button" class="btn-cancel" id="returnBtn">이전</button>
+                <button type="submit" class="btn-submit">회원가입</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--JS include-->
+<script type="text/javascript" src="../js/signUp.js"></script>
+
+</body>
+</html>
