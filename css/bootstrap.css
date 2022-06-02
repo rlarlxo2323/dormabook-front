@@ -11919,7 +11919,7 @@ textarea.form-control-lg {
 
 .header-body-left{
   flex: 1 1 0;
-  font-size: 55px;
+  font-size: 50px;
   font-weight: bold;
   color: white;
   text-align: left;
@@ -11991,7 +11991,7 @@ textarea.form-control-lg {
   flex: 1 1 0;
   flex-wrap: wrap;
   text-align: left;
-  font-size: 60px;
+  font-size: 55px;
   color: #00C473;
   font-weight: bold;
   display: flex;
@@ -12001,7 +12001,7 @@ textarea.form-control-lg {
   flex: 1 1 0;
   flex-wrap: wrap;
   text-align: right;
-  font-size: 60px;
+  font-size: 55px;
   color: #00C473;
   font-weight: bold;
   display: flex;
