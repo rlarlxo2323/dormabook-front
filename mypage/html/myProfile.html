@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/myProfile.css">
+    <title>Dorma Book</title>
+</head>
+<style>
+    /*반응형 웹*/
+    @media all and (max-width: 600px) {
+        #container, nav {
+            flex-direction: column;
+        }
+    }
+</style>
+
+</head>
+<body>
+<div id="body-wrapper">
+    <div id="body-content">
+        <header>
+            <a href="#">
+                <img src="../../images/logo_image.png" class="img_logo">
+            </a>
+        </header>
+        <nav>
+            <a class="a1" href="#">커뮤니티 홈</a>
+            <a class="a2" href="#">글 전체</a>
+            <a class="a3" href="#">MY 프로필</a>
+        </nav>
+        <hr class="liner">
+        <!--콘텐츠 영역-->
+        <h1></h1>
+
+        <div id="container">
+            <aside>
+                <h1></h1>
+                <div class="postBox">
+                    <div class="BoxUserName">안대현님</div>
+                    <div class="modifyBtn">프로필 수정</div>
+                    <div class="aboutMe">안녕하세요! 제가 습득한 지식을 나누고 싶은 컴소 17학번입니다.(여기최대255글자)</div>
+                    <div class="major1">ICT 공과 대학</div>
+                    <div class="major2">컴퓨터소프트웨어공학과</div>
+                    <table class="type03">
+                        <tr>
+                            <th scope="row">보유 포인트</th>
+                            <td class="point">5,000P</td>
+                        </tr>
+                    </table>
+                </div>
+                <nav class="nav2">
+                    <a class="b1" href="#">작성글</a>
+                    <a class="b2" href="#">신청 내역</a>
+                    <a class="b3" href="#">학습실</a>
+
+                </nav>
+                <hr class="liner2">
+                <h2></h2>
+                <h1>페이징 구역</h1>
+            </aside>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
