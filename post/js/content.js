@@ -8,14 +8,16 @@ const maxPage = Math.ceil(numOfContent / maxContent); //글을 모두 보여주�
 let page = 1; // 현재 페이지
 
 const makeContent = (id) => {
-  const content = document.createElement("li");
+  const content = document.createElement("lli");
   content.classList.add("content");
   content.innerHTML = `
-    <span class="numOfContent">전체 게시물</span>
-    <span class="content__id">${id}</span>
+<!--    <span class="numOfContent">전체 게시물</span>-->
+<!--    <span class="content__id">${id}</span>-->
     <span class="content__title">게시물 제목</span>
     <span class="content__author">작성자</span>
+    <span class="content__matchState">매칭상태</span>
     <span class="content__date">2022.01.01</span>
+    
   `;
   return content;
 };

@@ -5,7 +5,7 @@ $(document).ready(function ($) {
     $("#mento_postList").empty();
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/community/mentee_postlist?" + $.param({"postRule": "멘티"}),
+        url: "http://localhost:8080/api/community/mentee_postlist?" + $.param({"postRule": "멘티"}),
         contentType: 'application/json',
         success: function (data) {
             console.log(data);
@@ -31,7 +31,7 @@ $(document).ready(function ($) {
   var trHTML1 = '';
   $.ajax({
     type: "GET",
-    url: "http://localhost:8080/community/mento_postlist?" + $.param({"postRule": "멘토"}),
+    url: "http://localhost:8080/api/community/mento_postlist?" + $.param({"postRule": "멘토"}),
     contentType: 'application/json',
     success: function (data) {
       console.log(data);
