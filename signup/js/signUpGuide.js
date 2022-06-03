@@ -24,3 +24,9 @@ submitBtn.addEventListener('click', function (){
 returnBtn.addEventListener('click', function (){
     window.location.href = "https://dormabook.shop/"
 });
+
+var logo = document.getElementById("logo");
+
+logo.addEventListener('click', function (){
+    window.location.href = "https://dormabook.shop/"
+});

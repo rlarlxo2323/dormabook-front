@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>도르마북 | 비밀번호찾기</title>
+
+    <link rel="stylesheet" href="../../css/bootstrap.css"/>
+
+</head>
+<body>
+<div class="container mt-3">
+    <div class="mb-4">
+        <div style="color: #00C473; font-size: 50px; font-weight: bold; width: 30%">
+            <p id="logo" style="cursor: pointer;">Dorma Book</p>
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: column; height: 680px; margin-left: 320px; margin-right: 320px; margin-top: 150px;">
+        <form class="mb-5">
+            <div class="form-floating" style="margin-bottom: 100px;">
+                <input type="password" class="form-control" id="password" placeholder="Password" required
+                       pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="12" minlength="8">
+                <label for="password">Password</label>
+                <div style="color: gray; text-align: left">패스워드는 영문자, 숫자, 특수문자를 포함한 8~12자리입니다.</div>
+            </div>
+            <div class="form-floating mb-4-5">
+                <input type="password" class="form-control" id="rePassword" placeholder="RePassword" required
+                       pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="12" minlength="8">
+                <label for="password">Re:Password</label>
+                <div style="text-align: right">일치하지 않는 패스워드 입니다. || 올바른 패스워드 입니다.</div>
+            </div>
+            <div class="mb-4" style="text-align: center; margin-top: 150px;">
+                <button type="submit" class="btn-submit">로그인</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--JS include-->
+<script type="text/javascript" src="../login/js/resultPW.js"></script>
+
+</body>
+</html>

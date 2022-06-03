@@ -66,3 +66,9 @@ var returnBtn = document.getElementById("returnBtn");
 returnBtn.addEventListener('click', function (){
     window.location.href = "https://dormabook.shop/signup/guide"
 });
+
+var logo = document.getElementById("logo");
+
+logo.addEventListener('click', function (){
+    window.location.href = "https://dormabook.shop/"
+});
