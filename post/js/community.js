@@ -5,7 +5,7 @@ $(document).ready(function ($) {
     $("#mento_postList").empty();
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/api/community/mentee_postlist?" + $.param({"postRule": "멘티"}),
+        url: "http://localhost:8080/api/post/community/mentee_postlist?" + $.param({"postRule": "멘티"}),
         contentType: 'application/json',
         success: function (data) {
             console.log(data);
