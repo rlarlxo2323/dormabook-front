@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>도르마북 | 로그인</title>
+
+  <link rel="stylesheet" href="../../css/bootstrap.css"/>
+
+</head>
+<body>
+<div class="container mt-3">
+  <div class="mb-4">
+    <div style="color: #00C473; font-size: 50px; font-weight: bold; width: 30%">
+      <p id="logo" style="cursor: pointer;">Dorma Book</p>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; height: 600px; margin-left: 320px; margin-right: 320px; margin-top: 150px;">
+    <form class="mb-5">
+      <div class="form-floating" style="margin-bottom: 120px;">
+        <input type="text" class="form-control" id="id" placeholder="ID" required>
+        <label for="id">ID</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="password" placeholder="Password" required
+               maxlength="12" minlength="8">
+        <label for="password">Password</label>
+      </div>
+      <div class="mb-4" style="text-align: center">
+        <button type="submit" class="btn-submit" style="margin-top: 100px; margin-left: 0;">로그인</button>
+      </div>
+    </form>
+    <div style="display: flex; text-align: center;">
+      <div id="searchPW" style="flex: 1; color: darkgray; cursor: pointer;">
+        비밀번호 찾기
+      </div>
+      <div id="searchID" style="flex: 1; color: darkgray; cursor: pointer;">
+        아이디 찾기
+      </div>
+      <div id="signUp" style="flex: 1; color: darkgray; cursor: pointer;">
+        회원가입
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--JS include-->
+<script type="text/javascript" src="../login/js/login.js"></script>
+
+</body>
+</html>
