@@ -18,7 +18,7 @@
             <div class="form-floating mb-4-5">
                 <input type="text" class="form-control" id="id" placeholder="ID" required>
                 <label for="id">ID</label>
-                <div style="text-align: right">이미 사용중인 ID 입니다. || 사용 가능한 ID 입니다.</div>
+                <div id="checkedId" style="text-align: right"></div>
             </div>
             <div class="form-floating mb-3">
                 <input type="password" class="form-control" id="password" placeholder="Password" required
@@ -30,7 +30,7 @@
                 <input type="password" class="form-control" id="rePassword" placeholder="RePassword" required
                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="12" minlength="8">
                 <label for="password">Re:Password</label>
-                <div style="text-align: right">일치하지 않는 패스워드 입니다. || 올바른 패스워드 입니다.</div>
+                <div id="checkedPW" style="text-align: right"></div>
             </div>
             <div class="form-floating mb-4-5">
                 <input type="text" class="form-control" id="name" placeholder="홍길동" required>
@@ -57,7 +57,7 @@
             </div>
             <div class="mb-4" style="text-align: center">
                 <button type="button" class="btn-cancel" id="returnBtn">이전</button>
-                <button type="submit" class="btn-submit">회원가입</button>
+                <button type="button" class="btn-submit" id="signupBtn" onsubmit="test(); return true;">회원가입</button>
             </div>
         </form>
     </div>
