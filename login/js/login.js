@@ -45,7 +45,11 @@ $(document).ready(function($) {
                 var token = 'Bearer '+ tmp.accessToken
                 console.log(tmp.accessToken);
                 sessionStorage.setItem('jwt',token);
-                window.location.href = "https://dormabook.shop/community"
+                if (tmp.accessToken === "자격 증명에 실패하였습니다."){
+
+                }else{
+                    window.location.href = "https://dormabook.shop/community"
+                }
             },
             error: function () {
                 //
