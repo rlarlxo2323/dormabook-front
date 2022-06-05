@@ -34,21 +34,22 @@
                 <div class="form-floating mb-3" style="flex: 8;">
                     <input type="text" class="form-control" id="accessNumber" placeholder="000000" required
                            pattern="[0-9]{6}" maxlength="6">
-                    <label for="phone">인증 번호</label>
+                    <label for="accessNumber">인증 번호</label>
                 </div>
                 <div style="flex: 2;">
-                    <button type="button" class="btn-submit" style="font-size: 20px; width: 150px;">인증번호 받기</button>
+                    <button type="button" id="accessBtn" class="btn-submit" style="font-size: 20px; width: 150px;">인증번호 받기</button>
                 </div>
             </div>
             <div class="mb-4" style="text-align: center; margin-top: 150px;">
                 <button type="button" class="btn-cancel" id="returnBtn">이전</button>
-                <button type="submit" class="btn-submit">확인</button>
+                <button type="button" class="btn-submit" id="submitBtn">확인</button>
             </div>
         </form>
     </div>
 </div>
 
 <!--JS include-->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="/login/js/searchPW.js"></script>
 
 </body>

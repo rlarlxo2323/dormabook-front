@@ -115,7 +115,7 @@ $(document).ready(function ($) {
         var xhr = new XMLHttpRequest();
         var getMemberId = $("#id").val();
         $.ajax({
-            url: "http://localhost:9000/api/auth/signup/checkid",
+            url: "https://dormabook.shop/api/auth/signup/checkid",
             type: "post",
             contentType: 'application/json; charset=UTF-8',
             data: JSON.stringify({
@@ -157,11 +157,11 @@ $(document).ready(function ($) {
             var getMemberMajor = $("#department").val();
             var getMemberCollege = $("#college").val();
 
-            if (getMemberName !== null && getMemberStudentId.length === 6 && getMemberPhone.length === 13 &&
+            if (getMemberName !== null && getMemberStudentId.length === 8 && getMemberPhone.length === 13 &&
                 getMemberMajor !== null && getMemberCollege !== null) {
 
                 $.ajax({
-                    url: "http://localhost:9000/api/auth/signup",
+                    url: "https://dormabook.shop/api/auth/signup",
                     type: "post",
                     contentType: 'application/json; charset=UTF-8',
                     data: JSON.stringify({

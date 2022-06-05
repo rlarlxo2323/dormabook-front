@@ -20,23 +20,24 @@
             <div class="form-floating" style="margin-bottom: 100px;">
                 <input type="password" class="form-control" id="password" placeholder="Password" required
                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="12" minlength="8">
-                <label for="password">Password</label>
+                <label for="password">변경할 Password</label>
                 <div style="color: gray; text-align: left">패스워드는 영문자, 숫자, 특수문자를 포함한 8~12자리입니다.</div>
             </div>
             <div class="form-floating mb-4-5">
                 <input type="password" class="form-control" id="rePassword" placeholder="RePassword" required
                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" maxlength="12" minlength="8">
-                <label for="password">Re:Password</label>
-                <div style="text-align: right">일치하지 않는 패스워드 입니다. || 올바른 패스워드 입니다.</div>
+                <label for="rePassword">Re:Password</label>
+                <div id="checkedPW" style="text-align: right"></div>
             </div>
             <div class="mb-4" style="text-align: center; margin-top: 150px;">
-                <button type="submit" class="btn-submit">로그인</button>
+                <button type="button" id="submitBtn" class="btn-submit">로그인</button>
             </div>
         </form>
     </div>
 </div>
 
 <!--JS include-->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="/login/js/resultPW.js"></script>
 
 </body>
