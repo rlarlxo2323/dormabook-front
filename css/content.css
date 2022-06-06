@@ -1,9 +1,14 @@
 * {
   margin: 0;
-  padding: 0;
+  /*padding: 0;*/
   box-sizing: border-box;
 }
 
+@media all and (max-width: 600px) {
+  #container, nav {
+    flex-direction: column;
+  }
+}
 
 .buttons {
   position: relative;
@@ -47,16 +52,16 @@ header{
   justify-content: space-evenly;
   margin-top: 20px;
   /*margin-left: 17%;*/
-  padding-left: 30%;
+  padding-left: 17.5%;
   padding-right: 30%;
 }
 .img_logo{
   display: flex;
-  margin-right: 10px;
+  margin-right: 50px;
   max-width: 250px;
   border: none;
-  margin-top: 30px;
-  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 10px;
   /*width: 33px;*/
   height: 30px;
   left: 277px;
@@ -91,7 +96,7 @@ margin-top: 20px;
 nav{
   display: flex;
   justify-content: start;
-  padding-left: 560px;
+  padding-left: 277px;
 
   /*margin-top: 100px;*/
   /*border-bottom: 2px solid #00C473;*/
@@ -99,11 +104,11 @@ nav{
   display: flex;
 
   width: 100%;
-  height: 55px;
+  height: 53px;
   left: 0px;
   top: 169px;
 
-  border-bottom: 1px solid #00C473;
+  /*border-bottom: 1px solid #00C473;*/
 
 }
 
@@ -132,6 +137,17 @@ nav a{
 nav a:hover{
   color: #00C473;
 }
+
+.liner{
+  width: 100%;
+  height: 0px;
+  left: 0px;
+  top: 222px;
+  /*margin-left: 277px;*/
+  /*margin-right: 277px;*/
+  border: 1px solid #52E252;
+}
+
 .btn_group button{
   border: 1px solid #00C473;
   background-color: white;
@@ -148,11 +164,13 @@ nav a:hover{
   font-size: 1em;
 }
 .btn1{
-  color: white!important;
-  background-color: #00C473 !important;
+  /*color: white!important;*/
+  /*background-color: #00C473 !important;*/
+  color: white;
+  background-color: #00C473;
 }
 .btn_group button:hover{
-  color: white;
+  color: black;
   background-color: #00C473;
 }
 .text{
@@ -171,7 +189,14 @@ nav a:hover{
 .article {
   max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.article2 {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
   text-align: center;
 }
 
@@ -180,7 +205,7 @@ nav a:hover{
   padding: 0.3em 0;
   /*list-style: none;*/
   flex-wrap: wrap;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   flex-direction: column;
   /*width: 1254px;*/
   height: 100px;
@@ -189,52 +214,57 @@ nav a:hover{
 }
 .content__matchState,
 .content__id,
-.content__author,
 .content__date {
+
   /*flex-basis: 10%;*/
 }
 
 .content__title {
-  flex: 11;
+  font-size: large;
+  flex: 40%;
   text-align: left;
   /*overflow: hidden;*/
   white-space: nowrap;
-  /*text-overflow: ellipsis;*/
-
-  /*width: 450px;*/
-  /*height: 30px;*/
-  /*left: 333px;*/
-  /*top: 455px;*/
-}
-
-.content__author {
-  flex: 50%;
-  text-align: left;
-  overflow: hidden;
-  /*white-space: nowrap;*/
   text-overflow: ellipsis;
-
-  /*width: 450px;*/
+  /*padding-left: 10%;*/
+  /*width: 700px;*/
   /*height: 30px;*/
   /*left: 333px;*/
   /*top: 455px;*/
 }
+
 .content__matchState{
-  flex: 50%;
+  width: 300px;
+  /*flex: 20;*/
+  padding-top: 2.77%;
+  /*padding-left: 10%;*/
   text-align: left;
   overflow: hidden;
   /*white-space: nowrap;*/
   text-overflow: ellipsis;
 }
 .content__date {
-  flex: 1;
+  flex: 10%;
   text-align: right;
   padding-top: 60px;
-  /*overflow: hidden;*/
-  /*white-space: nowrap;*/
-  /*text-overflow: ellipsis;*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .lli{
   display: list-item;
   text-align: -webkit-match-parent;
+}
+
+.post_count{
+  padding-bottom: 2%;
+  padding-right: 75%;
+  font-size: larger;
+}
+.hr2{
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: .25;
 }
