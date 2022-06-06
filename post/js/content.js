@@ -1,11 +1,9 @@
 $(document).ready(function ($) {
     var token = sessionStorage.getItem('jwt');
-    if(!token){
+    if (!token) {
         alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
         window.location.href = "https://dormabook.shop"
     }
-    console.log(Base64.decode(token.toString().split('.')[1]));
-    var parseJwt = JSON.parse(Base64.decode(token.toString().split('.')[1]));
 
     $("#content__title").empty();
     $("#content__matchState").empty();
@@ -13,10 +11,10 @@ $(document).ready(function ($) {
     var post_url = "https://dormabook.shop/api/post/post_list/all";
     // https://dormabook.shop/api/post/post_list/all
     // http://localhost:8080/api/post/post_list/all
-    $('#comunity_home').click(function (){
+    $('#comunity_home').click(function () {
         window.location.href = "https://dormabook.shop/community";
     })
-    $('#post_list').click(function (){
+    $('#post_list').click(function () {
         window.location.href = "https://dormabook.shop/postlist";
     })
     // $('#my_profile').click(function (){
@@ -26,8 +24,8 @@ $(document).ready(function ($) {
     $.ajax({
         type: "GET",
         url: post_url,
-        beforeSend: function (xhr){
-            xhr.setRequestHeader("Authorization",token);
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", token);
         },
         success: function (data) {
             console.log(data);
@@ -52,6 +50,7 @@ $(document).ready(function ($) {
 
             document.getElementById("load_menteepost").style.backgroundColor = "#ffffff";
             document.getElementById("load_menteepost").style.color = "black";
+
             function timestamp(a) {
                 var today = new Date(a);
                 today.setHours(today.getHours() + 9);
@@ -61,6 +60,7 @@ $(document).ready(function ($) {
             $.each(data, function (i, item) {
                 title[i] = item.postTitle;
                 matchState[i] = item.postMatchState;
+                postNO[i] = item.postNo;
                 var date = timestamp(item.postCreatedAt);
                 createAt[i] = date;
 
@@ -84,7 +84,7 @@ $(document).ready(function ($) {
 
                 content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
-                  <!-- <span class="content_postNO">${postNO[id -1]}</span>-->
+                  <span class="content_postNO" style="display: none">${postNO[id - 1]}</span>
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
 
@@ -105,12 +105,6 @@ $(document).ready(function ($) {
 
                 return content;
             };
-            $(document).on("click",".contents lli", function (){
-                var a = $(this);
-                var s = a.eq(3).text();
-                console.log(s);
-
-            })
 
 
             var makeButton = (id) => {
@@ -191,12 +185,11 @@ $(document).ready(function ($) {
         //https://dormabook.shop/api/post/post_list/all
         //http://localhost:8080/api/post/post_list/all
         console.log(post_url);
-        // $(".post_count").empty();
         $.ajax({
             type: "GET",
             url: post_url,
-            beforeSend: function (xhr){
-                xhr.setRequestHeader("Authorization",token);
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", token);
             },
             success: function (data) {
                 console.log(data);
@@ -211,6 +204,7 @@ $(document).ready(function ($) {
                 var title = [];
                 var matchState = [];
                 var createAt = [];
+                var postNO = [];
                 document.getElementById("post_count").innerText = '전체 게시글 : ' + numOfContent + '건';
                 document.getElementById("load_post").style.backgroundColor = "#00C473";
                 document.getElementById("load_post").style.color = "white";
@@ -230,6 +224,7 @@ $(document).ready(function ($) {
                 $.each(data, function (i, item) {
                     title[i] = item.postTitle;
                     matchState[i] = item.postMatchState;
+                    postNO[i] = item.postNo;
                     var date = timestamp(item.postCreatedAt);
                     createAt[i] = date;
 
@@ -253,6 +248,7 @@ $(document).ready(function ($) {
 
                     content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
+                  <span class="content_postNO" style="display: none">${postNO[id - 1]}</span>     
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
 
@@ -273,6 +269,7 @@ $(document).ready(function ($) {
 
                     return content;
                 };
+
 
                 var makeButton = (id) => {
                     var button = document.createElement("button");
@@ -356,8 +353,8 @@ $(document).ready(function ($) {
         $.ajax({
             type: "GET",
             url: post_url,
-            beforeSend: function (xhr){
-                xhr.setRequestHeader("Authorization",token);
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", token);
             },
             success: function (data) {
                 console.log(data);
@@ -372,6 +369,7 @@ $(document).ready(function ($) {
                 var title = [];
                 var matchState = [];
                 var createAt = [];
+                var postNO = [];
                 document.getElementById("post_count").innerText = '멘토 게시글 : ' + numOfContent + '건';
 
                 document.getElementById("load_mentopost").style.backgroundColor = "#00C473";
@@ -392,6 +390,7 @@ $(document).ready(function ($) {
                 $.each(data, function (i, item) {
                     title[i] = item.postTitle;
                     matchState[i] = item.postMatchState;
+                    postNO[i] = item.postNo;
                     var date = timestamp(item.postCreatedAt);
                     createAt[i] = date;
 
@@ -415,6 +414,7 @@ $(document).ready(function ($) {
 
                     content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
+                  <span class="content_postNO" style="display: none">${postNO[id -1]}</span>
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
 
@@ -435,6 +435,7 @@ $(document).ready(function ($) {
 
                     return content;
                 };
+
 
                 var makeButton = (id) => {
                     var button = document.createElement("button");
@@ -518,8 +519,8 @@ $(document).ready(function ($) {
         $.ajax({
             type: "GET",
             url: post_url,
-            beforeSend: function (xhr){
-                xhr.setRequestHeader("Authorization",token);
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", token);
             },
             success: function (data) {
                 console.log(data);
@@ -534,6 +535,7 @@ $(document).ready(function ($) {
                 var title = [];
                 var matchState = [];
                 var createAt = [];
+                var postNO = [];
                 document.getElementById("post_count").innerText = '멘티 게시글 : ' + numOfContent + '건';
                 document.getElementById("load_menteepost").style.backgroundColor = "#00C473";
                 document.getElementById("load_menteepost").style.color = "white";
@@ -543,6 +545,7 @@ $(document).ready(function ($) {
 
                 document.getElementById("load_mentopost").style.backgroundColor = "#ffffff";
                 document.getElementById("load_mentopost").style.color = "black";
+
                 function timestamp(a) {
                     var today = new Date(a);
                     today.setHours(today.getHours() + 9);
@@ -552,6 +555,7 @@ $(document).ready(function ($) {
                 $.each(data, function (i, item) {
                     title[i] = item.postTitle;
                     matchState[i] = item.postMatchState;
+                    postNO[i] = item.postNo;
                     var date = timestamp(item.postCreatedAt);
                     createAt[i] = date;
 
@@ -575,6 +579,7 @@ $(document).ready(function ($) {
 
                     content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
+                  <span class="content_postNO" style="display: none">${postNO[id -1]}</span>
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
 
@@ -595,6 +600,7 @@ $(document).ready(function ($) {
 
                     return content;
                 };
+
 
                 var makeButton = (id) => {
                     var button = document.createElement("button");
@@ -670,7 +676,13 @@ $(document).ready(function ($) {
         });
 
     })
-    console.log(post_url);
+    $(document).on("click",".contents lli", function (){
+        var a = $(this);
+        var td = a.children();
+        var s = td.eq(0).text();
+        console.log(s);
+        sessionStorage.setItem('postNo',s);
+    })
 
 
 })

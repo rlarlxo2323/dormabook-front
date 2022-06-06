@@ -136,7 +136,14 @@ nav a{
 }
 nav a:hover{
   color: #00C473;
+  cursor: pointer;
 }
+
+.content__title:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 .liner{
   width: 100%;

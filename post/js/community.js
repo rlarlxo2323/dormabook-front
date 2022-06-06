@@ -4,8 +4,8 @@ $(document).ready(function ($) {
         alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
         window.location.href = "https://dormabook.shop"
     }
-    console.log(Base64.decode(token.toString().split('.')[1]));
-    var parseJwt = JSON.parse(Base64.decode(token.toString().split('.')[1]));
+    // console.log(Base64.decode(token.toString().split('.')[1]));
+    // var parseJwt = JSON.parse(Base64.decode(token.toString().split('.')[1]));
 
     var a = "";
     var trHTML = '';
@@ -91,12 +91,12 @@ $(document).ready(function ($) {
             //
         }
     });
-    // $('#comunity_home').click(function (){
-    //     window.location.href = "http://localhost:63342/dormabook-front/front/post/html/community.html?_ijt=f63ne4lr5rn9ffpeh1s9gg83m3&_ij_reload=RELOAD_ON_SAVE#";
-    // })
-    // $('#post_list').click(function (){
-    //     window.location.href = "http://localhost:63342/dormabook-front/front/post/html/content.html?_ijt=e9mqrjp9mj8qnnricf75soii9v&_ij_reload=RELOAD_ON_SAVE";
-    // })
+    $('#comunity_home').click(function (){
+        window.location.href = "https://dormabook.shop/community";
+    })
+    $('#post_list').click(function (){
+        window.location.href = "https://dormabook.shop/postlist";
+    })
     // $('#my_profile').click(function (){
     //     window.location.href = "http://localhost:63342/dormabook-front/front/mypage/html/myProfile.html?_ijt=e9mqrjp9mj8qnnricf75soii9v&_ij_reload=RELOAD_ON_SAVE";
     // })
