@@ -48,6 +48,8 @@ $(document).ready(function ($) {
 
             var no = td.eq(2).text();
             sessionStorage.setItem('postNo',no);
+
+
             //게시글 uri 넣기;
         console.log(no);
     })

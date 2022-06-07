@@ -85,6 +85,26 @@ nav a:hover{
     border: 1px solid white;
     padding: 13px;
 }
+.button{
+    border: 1px solid white;
+    padding: 13px;
+}
+
+.button:hover{
+    text-decoration-line: underline;
+}
+label{
+    border: 1px solid white;
+    padding: 13px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/*#image_upload, #result_upload {*/
+/*    visibility: hidden;*/
+/*}*/
+
+
 .mentor{
     margin-right: -4px;
     border-top-left-radius: 10px;
@@ -167,11 +187,13 @@ textarea{
 .result:hover{
     background-color: #b8bbbd;
 }
+
 .btn{
     padding-top: 30px;
     width: 130px;
     margin: auto;
 }
+
 .upload{
     width: 160px;
     height: 45px;

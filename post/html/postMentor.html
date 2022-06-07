@@ -4,62 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/postMentor.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../../css/postMentor.css"/>
+    <title>도르마북 | 게시글 작성 | 멘토</title>
 
     <style>
         /*반응형 웹*/
-        @media all and (max-width: 600px){
-            #container, nav{
+        @media all and (max-width: 600px) {
+            #container, nav {
                 flex-direction: column;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="#">
-            <img src="./image/logo_image.png" class="img_logo">
-        </a>
-        <div class="search">
-            <input type="text" maxlength="255" placeholder="제목, 키워드로 검색하세요.">
-            <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-        </div>
-    </header>
-    <nav>
-          <a class="a1" href="#">커뮤니티 홈</a>
-          <a class="a2" href="#">글 전체</a>
-          <a class="a3" href="#">MY 프로필</a>
-    </nav>
-    
-    <div id="container" role="main">
-        <div class="btn_group">
-            <button class="mentor" onclick="location.href='writing.html'">멘토</button>
-            <button class="mentee" onclick="location.href='writing2.html'">멘티</button>
-        </div>
-
-        <div class="title">
-            <input type="text" maxlength="250" placeholder="제목을 입력해주세요.">
-        </div>
-
-        <div class="subject">
-            <input type="text" maxlength="100" placeholder="과목명을 입력해주세요.">
-        </div>
-
-        <div class="bookname">
-            <input type="text" maxlength="100" placeholder="책 이름을 입력해주세요.">
-        </div>
-        <div class="content">
-            <textarea rows="5" cols="30" wrap="hard" maxlength="1000" 
-            placeholder="내용을 입력하세요. &#13;&#10;&#13;&#10;&#13;&#10;등록한 글은 사용자의 이름으로 등록됩니다.">내용을 입력하세요.</textarea>
-        </div>
-        <div class="btn_group2">
-            <button class="image">사진 업로드</button>
-            <button class="result">성적 증명서 업로드</button>
-        </div>
-        <div class="btn">
-            <button class="upload">게시글 작성</button>
-        </div>
+<header>
+    <a href="#">
+        <img src="../../images/logo_image.png" class="img_logo">
+    </a>
+    <div class="search">
+        <input type="text" maxlength="255" placeholder="제목, 키워드로 검색하세요.">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
     </div>
+</header>
+<nav>
+    <a class="a1" href="#">커뮤니티 홈</a>
+    <a class="a2" href="#">글 전체</a>
+    <a class="a3" href="#">MY 프로필</a>
+</nav>
+
+<div id="container" role="main">
+    <div class="btn_group">
+        <button class="mentor" onclick="location.href='writing.html'">멘토</button>
+        <button class="mentee" onclick="location.href='writing2.html'">멘티</button>
+    </div>
+
+    <div class="title">
+        <input type="text" maxlength="250" placeholder="제목을 입력해주세요.">
+    </div>
+
+    <div class="subject">
+        <input type="text" maxlength="100" placeholder="과목명을 입력해주세요.">
+    </div>
+
+    <div class="bookname">
+        <input type="text" maxlength="100" placeholder="책 이름을 입력해주세요.">
+    </div>
+    <div class="content">
+            <textarea rows="5" cols="30" wrap="hard" maxlength="1000"
+                      placeholder="내용을 입력하세요. &#13;&#10;&#13;&#10;&#13;&#10;등록한 글은 사용자의 이름으로 등록됩니다.">내용을 입력하세요.</textarea>
+    </div>
+    <div class="btn_group2">
+        <form action="post" enctype="multipart/form-data">
+            <div class="button">
+                <label for="image_upload">이미지 업로드</label>
+            </div>
+            <div class="button">
+                <label for="result_upload">성적 증명서 업로드</label>
+            </div>
+            <input class="image" type="file" name="image_upload" id="image_upload" accept="image/*"
+                   onchange="loadFile(this)">
+            <input class="result" type="file" name="result_upload" id="result_upload" accept="application/**"
+                   onchange="loadFile(this)">
+        </form>
+    </div>
+    <div class="btn">
+        <button class="upload">게시글 작성</button>
+    </div>
+</div>
 </body>
 </html>
