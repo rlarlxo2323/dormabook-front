@@ -16,7 +16,7 @@ $(document).ready(function ($) {
     $.ajax({
         type: "GET",
         // url: "http://localhost:8080/api/post/community/postlist?" + $.param({"postRule": "멘티"}),
-        url: "https://dormabook.shop/api/post/community/postlist?" + $.param({"postRule": "멘토"}),
+        url: "https://dormabook.shop/api/post/community/postlist?" + $.param({"postRule": "멘티"}),
         beforeSend: function (xhr){
             xhr.setRequestHeader("Authorization",token);
         },
