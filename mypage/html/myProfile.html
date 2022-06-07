@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/myProfile.css">
-    <title>Dorma Book</title>
+    <title>도르마북 | 마이페이지</title>
 </head>
 <style>
     /*반응형 웹*/
@@ -25,45 +24,152 @@
                 <img src="../../images/logo_image.png" class="img_logo">
             </a>
         </header>
-        <nav>
+        <nav class="nav1">
             <a class="a1" href="#">커뮤니티 홈</a>
             <a class="a2" href="#">글 전체</a>
             <a class="a3" href="#">MY 프로필</a>
         </nav>
         <hr class="liner">
-        <!--콘텐츠 영역-->
-        <h1></h1>
 
         <div id="container">
-            <aside>
-                <h1></h1>
-                <div class="postBox">
-                    <div class="BoxUserName">안대현님</div>
-                    <div class="modifyBtn">프로필 수정</div>
-                    <div class="aboutMe">안녕하세요! 제가 습득한 지식을 나누고 싶은 컴소 17학번입니다.(여기최대255글자)</div>
-                    <div class="major1">ICT 공과 대학</div>
-                    <div class="major2">컴퓨터소프트웨어공학과</div>
-                    <table class="type03">
-                        <tr>
-                            <th scope="row">보유 포인트</th>
-                            <td class="point">5,000P</td>
-                        </tr>
-                    </table>
+            <div style="width: 100%">
+                <div class="userInfo">
+                    <div style="display: flex; flex-wrap: nowrap;">
+                        <div style="flex: 1 0 0; text-align: left; font-size: 30px;">안대현님</div>
+                        <div style="flex: 1 0 0; text-align: right">
+                            <button type="button" class="modifyBtn">프로필 수정</button>
+                        </div>
+                    </div>
+
+                    <div style="flex: 1 auto;">
+                        <div style="text-align: left; margin: 10px 0">
+                            안녕하세요! 제가 습득한 지식을 나누고 싶은 컴소 17학번입니다.(여기최대255글자)
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: nowrap;">
+                        <div style="flex: 5 0; display: flex; flex-direction: column;">
+                            <div style="text-align: left;">
+                                <div class="major1" style="display: inline-block;">
+                                    ICT 공과 대학
+                                </div>
+                            </div>
+                            <div style="text-align: left;">
+                                <div class="major1" style="display: inline-block;">
+                                    컴소공
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex: 1 0 auto; display: flex; align-items: end;">
+                            <div style="flex: 1 auto; text-align: right; margin-right: 10px">
+                                보유 포인트 :
+                            </div>
+                            <div style="flex: 1 auto; text-align: left; color: #00C473; font-weight: bold;">
+                                2000
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <nav class="nav2">
-                    <a class="b1" href="#">작성글</a>
-                    <a class="b2" href="#">신청 내역</a>
-                    <a class="b3" href="#">학습실</a>
-
-                </nav>
+                <div style="text-align: center; align-items: center">
+                    <nav class="nav2" id="nav2">
+                        <a class="b1 tab-head" data-tab-section="tab1">작성글</a>
+                        <a class="b2 tab-head" data-tab-section="tab2">신청 내역</a>
+                        <a class="b2 tab-head" data-tab-section="tab3">학습실</a>
+                    </nav>
+                </div>
                 <hr class="liner2">
-                <h2></h2>
-                <h1>페이징 구역</h1>
-            </aside>
+            </div>
+            <div class="postBox" style="width: 100%; margin-top: 10px;">
+                <section id="tab1" class="tab-item" style="height: 100%">
+                    <div style="height: 100%">
+                        <div style="display: flex; flex-direction: column; height: 100%">
+                            <div id="t1_postHeader" style="flex-grow: 1; display: flex; align-items: center;">
+                                <div style="font-weight: bold; font-size: 25px; width: 100%">
+                                    작성한 글이 없습니다.
+                                </div>
+                            </div>
 
+                            <div id="t1_postBody" style="flex-grow: 4; display: flex; align-items: center;">
+                                <div style="width: 100%; font-size: 20px; height: 100%;">
+                                    <ul id="t1_contents" class="t1_contents">
+
+                                    </ul>
+                                    <div id="t1_postBody-text">
+                                        멘토-멘티 프로그램에 <br><br>
+                                        참여하기 위해<br><br>
+                                        팀원을 구하는 게시글을 작성해보세요.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="t1_postFooter" class="t1_postFooter" style="flex-grow: 1;">
+                                <button type="button" class="btn-submit" id="testBtn">게시글 작성</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tab2" class="tab-item" style="height: 100%" hidden>
+                    <div style="height: 100%">
+                        <div style="display: flex; flex-direction: column; height: 100%">
+                            <div id="t2_postHeader" style="flex-grow: 1; display: flex; align-items: center;">
+                                <div style="font-weight: bold; font-size: 25px; width: 100%">
+                                    신청 내역이 없습니다.
+                                </div>
+                            </div>
+
+                            <div id="t2_postBody" style="flex-grow: 4; display: flex; align-items: center;">
+                                <div style="width: 100%; font-size: 20px;">
+                                    멘토-멘티 프로그램에 <br><br>
+                                    참여하기 위해<br><br>
+                                    팀원 신청을 해보세요.
+                                </div>
+                            </div>
+
+                            <div id="t2_postFooter" style="flex-grow: 1;">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tab3" class="tab-item" style="height: 100%" hidden>
+                    <div style="height: 100%">
+                        <div style="display: flex; flex-direction: column; height: 100%">
+                            <div id="t3_postHeader" style="flex-grow: 1; display: flex; align-items: center;">
+                                <div style="font-weight: bold; font-size: 25px; width: 100%">
+                                    개설된 학습실이 없습니다.
+                                </div>
+                            </div>
+
+                            <div id="t3_postBody" style="flex-grow: 4; display: flex; align-items: center;">
+                                <form action="https://class.dormabook.shop/video-chat" method="get">
+                                    <button type="submit">gogogo</button>
+                                </form>
+                                <div style="width: 100%; font-size: 20px; height: 100%;">
+                                    <ul id="t3_contents" class="t3_contents">
+
+                                    </ul>
+                                    <div id="t3_postBody-text">
+                                        멘토-멘티 프로그램에 <br><br>
+                                        참여하기 위해<br><br>
+                                        팀원 매칭을 이뤄보세요.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="t3_postFooter" class="t3_postFooter" style="flex-grow: 1;">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </div>
 
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="../mypage/js/myProfile.js"></script>
 </body>
 </html>
