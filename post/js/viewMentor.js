@@ -35,11 +35,11 @@ $(document).ready(function ($) {
             }else{
                 var matchState = "매칭 중";
             }
-            var date = timestamp(data.postCreatedAt);                         // todo: 아래코드를 서버 사진 저장 폴더 경로로 바꿔줘야함. 39번째 라인
-            var imageCode = data.bookimageRoute + "/" + data.bookSaveimagename; // ->  c:/Users/KING/test/uploads/5faa9050-e5c7-4813-886d-95766e60e350_t2.png
+            var date = timestamp(data.postCreatedAt);                           //todo: 아래코드를 서버 사진 저장 폴더 경로로 바꿔줘야함. 39번째 라인
+            var imageCode = data.bookimageRoute + "/" + data.bookSaveimagename; //todo: ex) ->  c:/Users/KING/test/uploads/5faa9050-e5c7-4813-886d-95766e60e350_t2.png
             console.log(imageCode)
-            var test =imageCode.replaceAll('/','\\');    // -> C:\Users\KING\test\uploads\41c43072-4e49-4e4d-851b-b8f3af778930_mento_scprit.png
-            console.log(test)
+            var replImgCode =imageCode.replaceAll('/','\\');       //todo: ex) -> C:\Users\KING\test\uploads\41c43072-4e49-4e4d-851b-b8f3af778930_mento_scprit.png
+            console.log(replImgCode)
             document.getElementById("post__title").innerText = data.postTitle;
             document.getElementById("user__name").innerText = data.memberName;
             document.getElementById("post__created_at").innerText = date;
@@ -54,7 +54,7 @@ $(document).ready(function ($) {
                 a.alt = alt;
                 document.getElementById("book__image").appendChild(a);
             }
-            display_image(test,100,100,'bookImage');
+            display_image(replImgCode,200,200,'bookImage');
         },
         error: function (error) {
             console.log(error)

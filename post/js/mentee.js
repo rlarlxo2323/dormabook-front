@@ -36,8 +36,8 @@ $(document).on("click", "#agree", function () {
         },
         success: function () {
             console.log('')
-            alert('success');
-            window.location.href ="https://dormabook.shop";
+            alert('신청이 완료되었습니다.');
+            window.location.href ="https://dormabook.shop/community";
         }
     });
 

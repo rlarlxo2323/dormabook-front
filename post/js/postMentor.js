@@ -58,7 +58,7 @@ $(document).on("click", "#upload", function () {
         success: function (data) {
             console.log(data)
             alert(data);
-            window.location.href = "https://dormabook.shop/comunity";
+            window.location.href = "https://dormabook.shop/content";
         }
     });
 

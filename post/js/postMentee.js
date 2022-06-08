@@ -54,7 +54,7 @@ $(document).on("click", "#upload", function () {
         success: function () {
             console.log('게시글 작성 완료')
             alert('게시글 작성 완료');
-            window.location.href ="https://dormabook.shop";
+            window.location.href ="https://dormabook.shop/content";
 
         }
     });

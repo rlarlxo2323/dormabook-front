@@ -68,8 +68,7 @@ $(document).ready(function ($) {
 
             var no = td.eq(2).text();
             sessionStorage.setItem('postNo',no);
-
-            //게시글 uri 넣기;
+            window.location.href = "https://dormabook.shop/viewmentee";
         console.log(no);
     })
     $(document).on("click","#mento_postList tr",function (){
@@ -78,7 +77,7 @@ $(document).ready(function ($) {
 
         var no = td.eq(2).text();
         sessionStorage.setItem('postNo',no);
-        //게시글 uri 넣기;
+        window.location.href = "https://dormabook.shop/viewmento";
         console.log(no);
     })
     var a1 = "";
@@ -110,7 +109,11 @@ $(document).ready(function ($) {
         error: function () {
             //
         }
+
     });
+    $('#post__btn').click(function (){
+        window.location.href = "https://dormabook.shop/postmento";
+    })
     $('#comunity_home').click(function (){
         window.location.href = "https://dormabook.shop/community";
     })

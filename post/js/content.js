@@ -691,13 +691,14 @@ $(document).ready(function ($) {
         console.log(s2);
         if(s2 == '멘토'){
             sessionStorage.setItem('postNo',s);
-            // 멘토 게시글.html 로 가기; todo: 아래 작성 중
-            window.location.href="http://dormabook.shop/"
+            window.location.href="http://dormabook.shop/viewmento"
         }else{
             sessionStorage.setItem('postNo',s);
-            // 멘토 게시글.html 로 가기; todo: 아래 작성 중
-            window.location.href="http://dormabook.shop/"
+            window.location.href="http://dormabook.shop/viewmentee"
         }
+    })
+    $('#post__btn').click(function (){
+        window.location.href = "https://dormabook.shop/postmento";
     })
 
     $('#comunity_home').click(function (){
