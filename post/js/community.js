@@ -18,9 +18,9 @@ $(document).ready(function ($) {
     $.ajax({
         type: "GET",
         // url: "https://dormabook.shop/api/post/community/profile",
-        url: "http://localhost:9000/api/post/community/profile",
+        url: "https://dormabook.shop/api/post/community/profile",
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token);
+            xhr.setRequestHeader("Authorization", token);
         },
         success: function (data) {
             document.getElementById("post-count").innerText = data[0].count;
@@ -62,24 +62,6 @@ $(document).ready(function ($) {
         }
     });
 
-        $(document).on("click","#mentee_postList tr",function (){
-            var tr = $(this);
-            var td = tr.children();
-
-            var no = td.eq(2).text();
-            sessionStorage.setItem('postNo',no);
-            window.location.href = "https://dormabook.shop/viewmentee";
-        console.log(no);
-    })
-    $(document).on("click","#mento_postList tr",function (){
-        var tr = $(this);
-        var td = tr.children();
-
-        var no = td.eq(2).text();
-        sessionStorage.setItem('postNo',no);
-        window.location.href = "https://dormabook.shop/viewmento";
-        console.log(no);
-    })
     var a1 = "";
     var trHTML1 = '';
     $.ajax({
@@ -124,4 +106,21 @@ $(document).ready(function ($) {
         window.location.href = "https://dormabook.shop/mypage";
     })
 })
+$(document).on("click","#mentee_postList tr",function (){
+    var tr = $(this);
+    var td = tr.children();
 
+    var no = td.eq(2).text();
+    sessionStorage.setItem('postNo',no);
+    window.location.href = "https://dormabook.shop/viewmentee";
+    console.log(no);
+})
+$(document).on("click","#mento_postList tr",function (){
+    var tr = $(this);
+    var td = tr.children();
+
+    var no = td.eq(2).text();
+    sessionStorage.setItem('postNo',no);
+    window.location.href = "https://dormabook.shop/viewmento";
+    console.log(no);
+})

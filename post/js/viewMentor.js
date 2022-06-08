@@ -1,13 +1,18 @@
 $(document).ready(function ($) {
+    var token = sessionStorage.getItem('jwt');
+    if(!token){
+        alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
+        window.location.href = "https://dormabook.shop"
+    }
 
-    var getpostNO = sessionStorage.getItem("postNO"); //서버 연결 후 이걸로 사용
+    var getpostNO = sessionStorage.getItem("postNo"); //서버 연결 후 이걸로 사용
+    console.log(getpostNO);
     $("#post__title").empty();
     $("#user__name").empty();
     $("#post__created_at").empty();
     $("#post__match_state").empty();
     $("#post__content").empty();
     $("#book__image").empty();
-    // var postNO = 70; //테스트 코드
     var post_url = "https://dormabook.shop/api/post/mento_post?" + $.param({"postNo": getpostNO});
 
     function timestamp(a) {
@@ -30,6 +35,7 @@ $(document).ready(function ($) {
             console.log(data.bookimageRoute);
             console.log(data.postContent);
             console.log(data.postTitle);
+
             if (data.postMatchState == 1){
                 var matchState = "매칭 완료";
             }else{

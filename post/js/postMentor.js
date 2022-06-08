@@ -43,6 +43,9 @@ $(document).on("click", "#upload", function () {
     $.ajax({
         type: 'post',
         url: 'https://dormabook.shop/api/post/mento_post/upload/post',
+        beforeSend: function (xhr){
+            xhr.setRequestHeader("Authorization",token);
+        },
         processData: false,
         contentType: false,
         cache: false,
@@ -50,26 +53,24 @@ $(document).on("click", "#upload", function () {
         dataType: "text",
         data: formData,
         error: function (error) {
-            if ($('#image_upload').get(0).files[0] == null) {
+            if ($('#image_upload').get(0).files[0].length == 0) {
                 alert("성적 증명서를 첨부 하세요!");
             }
-            alert(data);
         },
         success: function (data) {
             console.log(data)
             alert(data);
-            window.location.href = "https://dormabook.shop/content";
+            window.location.href = "https://dormabook.shop/community";
         }
     });
 
-})
-
-$('#comunity_home').click(function (){
-    window.location.href = "https://dormabook.shop/community";
-})
-$('#post_list').click(function (){
-    window.location.href = "https://dormabook.shop/postlist";
-})
-$('#my_profile').click(function (){
-    window.location.href = "https://dormabook.shop/mypage";
+    $('#comunity_home').click(function (){
+        window.location.href = "https://dormabook.shop/community";
+    })
+    $('#post_list').click(function (){
+        window.location.href = "https://dormabook.shop/postlist";
+    })
+    $('#my_profile').click(function (){
+        window.location.href = "https://dormabook.shop/mypage";
+    })
 })

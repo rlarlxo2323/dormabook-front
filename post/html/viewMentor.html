@@ -20,59 +20,60 @@
     <script src="/post/js/viewMentor.js"></script>
 </head>
 <body>
-    <header>
-        <a href="#">
-            <img src="../../images/logo_image.png" class="img_logo">
-        </a>
-        <div class="search">
-            <input type="text" maxlength="255" placeholder="제목, 키워드로 검색하세요.">
-            <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-        </div>
-    </header>
-    <nav>
-        <a class="a1" href="#" id="comunity_home">커뮤니티 홈</a>
-        <a class="a2" href="#" id="post_list">글 전체</a>
-        <a class="a3" href="#" id="my_profile">MY 프로필</a>
-    </nav>
-
-    <div id="container" role="main">
-        <div class="back">
-            <button class="back_btn" onclick="back()">
-                < 뒤로 가기
-            </button>
-        </div>
-        <article>
-            <div class="text">
-                <div class="title">
-                <h3 id="post__title"></h3>
-                </div>
-                <div class="info" id="user__name" style="display: flex;"></div>
-                <div class="date" id="post__created_at"></div>
-                    <div class="span_group">
-                        <span class="span1">성적 인증 완료</span>
-                        <span class="span2" id="post__match_state"></span>
-                    </div> 
-
-                <div class="content" id="post__content"></div>
-                <div class="image" id="book__image"></div>
-                <div class="sign_up">
-                    <button class="sign" onclick="new_window();">팀원 신청</button>
-                </div>
-            </div>
-        </article>
+<header>
+    <a href="#">
+        <img src="../../images/logo_image.png" class="img_logo">
+    </a>
+    <div class="search">
+        <input type="text" maxlength="255" placeholder="제목, 키워드로 검색하세요.">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
     </div>
-    <script>
-        var new_window_width = 600;
-        var new_window_height = 400;
-        var positionX = ( window.screen.width / 2 ) - ( new_window_width / 2 );
-        var positionY = ( window.screen.height / 2 ) - ( new_window_height / 2 );
-        function new_window() {
-            window.open(
-                "https://dormabook.shop/applicationmento",
-                "mento",
-                "width=" + new_window_width + ", height=" + new_window_height + ", top=" + positionY + ", left=" + positionX
-            );
-        }
-    </script>
+</header>
+<nav>
+    <a class="a1" href="#" id="comunity_home">커뮤니티 홈</a>
+    <a class="a2" href="#" id="post_list">글 전체</a>
+    <a class="a3" href="#" id="my_profile">MY 프로필</a>
+</nav>
+
+<div id="container" role="main">
+    <div class="back">
+        <button class="back_btn" onclick="back()">
+            < 뒤로 가기
+        </button>
+    </div>
+    <article>
+        <div class="text">
+            <div class="title">
+                <h3 id="post__title"></h3>
+            </div>
+            <div class="info" id="user__name" style="display: flex;"></div>
+            <div class="date" id="post__created_at"></div>
+            <div class="span_group">
+                <span class="span1">성적 인증 완료</span>
+                <span class="span2" id="post__match_state"></span>
+            </div>
+
+            <div class="content" id="post__content"></div>
+            <div class="image" id="book__image"></div>
+            <div class="sign_up">
+                <button class="sign" onclick="new_window();">팀원 신청</button>
+            </div>
+        </div>
+    </article>
+</div>
+<script>
+    var new_window_width = 600;
+    var new_window_height = 400;
+    var positionX = ( window.screen.width / 2 ) - ( new_window_width / 2 );
+    var positionY = ( window.screen.height / 2 ) - ( new_window_height / 2 );
+    function new_window() {
+        window.open(
+            "https://dormabook.shop/applicationmento",
+            "mento",
+            "width=" + new_window_width + ", height=" + new_window_height + ", top=" + positionY + ", left=" + positionX
+        );
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
 </body>
 </html>

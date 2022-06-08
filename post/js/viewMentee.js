@@ -4,14 +4,13 @@ $(document).ready(function ($) {
         alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
         window.location.href = "https://dormabook.shop"
     }
-    var getpostNO = sessionStorage.getItem("postNO"); //서버 연결 후 이걸로 사용
+    var getpostNO = sessionStorage.getItem("postNo"); //서버 연결 후 이걸로 사용
     $("#post__title").empty();
     $("#user__name").empty();
     $("#post__created_at").empty();
     $("#post__match_state").empty();
     $("#post__content").empty();
-    // var postNO = 13; //테스트 코드
-    var post_url = "https://dormabook.shop/api/post/mentee_post?" + $.param({"postNo": postNO});
+    var post_url = "https://dormabook.shop/api/post/mentee_post?" + $.param({"postNo": getpostNO});
 
     function timestamp(a) {
         var today = new Date(a);
@@ -27,7 +26,7 @@ $(document).ready(function ($) {
         },
         success: function (data) {
             console.log(data)
-            console.log(data.member.memberName)
+            // console.log(data.member.memberName)
             if (data.postCreatedAt == 1){
                 var matchState = "매칭 완료";
             }else{

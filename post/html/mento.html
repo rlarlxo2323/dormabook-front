@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/mento.css" />
+    <link rel="stylesheet" href="../../css/mento.css"/>
     <title>도르마북 | 팀 신청서</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/post/js/mento.js"></script>
 </head>
 <body>
-    <h2>멘토 신청서</h2>
-    <div class="content">
-        <textarea rows="5" cols="30" wrap="hard" maxlength="1000" placeholder="내용을 입력하세요."></textarea>
-    </div>
-    <div class="btn_group">
-        <button class="agree" id="agree">신청</button>
-        <button class="cancel" onclick="cancel()">취소</button>
-    </div>
+<h2>멘토 신청서</h2>
+<div class="content">
+    <textarea rows="5" cols="30" wrap="hard" maxlength="1000" placeholder="내용을 입력하세요." id="text_area"></textarea>
+</div>
+<div class="btn_group">
+    <button class="agree" id="agree">신청</button>
+    <button class="cancel" onclick="cancel()">취소</button>
+</div>
 </body>
 </html>

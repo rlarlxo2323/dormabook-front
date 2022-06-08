@@ -8,7 +8,6 @@ $(document).on("click", "#upload", function () {
     var subject = $('#subject').val();
     var bookname = $('#bookname').val();
     var content = $('#content').val();
-
     if (title == null || title == undefined || title == "") {
         alert('제목을 입력해주세요.');
         $('#title').focus();
@@ -29,7 +28,6 @@ $(document).on("click", "#upload", function () {
         $('#content').focus();
         return;
     }
-
     var data = {
         "postTitle": $('#title').val(),
         "postSubject": $('#subject').val(),
@@ -44,6 +42,9 @@ $(document).on("click", "#upload", function () {
     $.ajax({
         type: 'post',
         url: 'https://dormabook.shop/api/post/mentee_post/upload/post',
+        beforeSend: function (xhr){
+            xhr.setRequestHeader("Authorization",token);
+        },
         processData: false,
         contentType: false,
         cache: false,
@@ -52,20 +53,19 @@ $(document).on("click", "#upload", function () {
             alert('게시글 작성 실패');
         },
         success: function () {
-            console.log('게시글 작성 완료')
             alert('게시글 작성 완료');
-            window.location.href ="https://dormabook.shop/content";
+            window.location.href ="https://dormabook.shop/community";
 
         }
     });
+    $('#comunity_home').click(function (){
+        window.location.href = "https://dormabook.shop/community";
+    })
+    $('#post_list').click(function (){
+        window.location.href = "https://dormabook.shop/postlist";
+    })
+    $('#my_profile').click(function (){
+        window.location.href = "https://dormabook.shop/mypage";
+    })
 })
 
-$('#comunity_home').click(function (){
-    window.location.href = "https://dormabook.shop/community";
-})
-$('#post_list').click(function (){
-    window.location.href = "https://dormabook.shop/postlist";
-})
-$('#my_profile').click(function (){
-    window.location.href = "https://dormabook.shop/mypage";
-})

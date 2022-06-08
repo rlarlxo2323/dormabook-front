@@ -213,6 +213,7 @@ $(document).ready(function ($) {
                 var matchState = [];
                 var createAt = [];
                 var postNO = [];
+                var postRole = [];
                 document.getElementById("post_count").innerText = '전체 게시글 : ' + numOfContent + '건';
                 document.getElementById("load_post").style.backgroundColor = "#00C473";
                 document.getElementById("load_post").style.color = "white";
@@ -233,6 +234,7 @@ $(document).ready(function ($) {
                     title[i] = item.postTitle;
                     matchState[i] = item.postMatchState;
                     postNO[i] = item.postNo;
+                    postRole[i] = item.postRole;
                     var date = timestamp(item.postCreatedAt);
                     createAt[i] = date;
 
@@ -256,6 +258,7 @@ $(document).ready(function ($) {
 
                     content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
+                  <span style="display: none">${postRole[id-1]}</span>
                   <span class="content_postNO" style="display: none">${postNO[id - 1]}</span>     
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
@@ -376,6 +379,7 @@ $(document).ready(function ($) {
                 var matchState = [];
                 var createAt = [];
                 var postNO = [];
+                var postRole = [];
                 document.getElementById("post_count").innerText = '멘토 게시글 : ' + numOfContent + '건';
 
                 document.getElementById("load_mentopost").style.backgroundColor = "#00C473";
@@ -397,6 +401,7 @@ $(document).ready(function ($) {
                     title[i] = item.postTitle;
                     matchState[i] = item.postMatchState;
                     postNO[i] = item.postNo;
+                    postRole[i] = item.postRole;
                     var date = timestamp(item.postCreatedAt);
                     createAt[i] = date;
 
@@ -420,6 +425,7 @@ $(document).ready(function ($) {
 
                     content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
+                  <span style="display: none">${postRole[id-1]}</span>
                   <span class="content_postNO" style="display: none">${postNO[id -1]}</span>
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
@@ -540,6 +546,7 @@ $(document).ready(function ($) {
                 var matchState = [];
                 var createAt = [];
                 var postNO = [];
+                var postRole = [];
                 document.getElementById("post_count").innerText = '멘티 게시글 : ' + numOfContent + '건';
                 document.getElementById("load_menteepost").style.backgroundColor = "#00C473";
                 document.getElementById("load_menteepost").style.color = "white";
@@ -560,6 +567,7 @@ $(document).ready(function ($) {
                     title[i] = item.postTitle;
                     matchState[i] = item.postMatchState;
                     postNO[i] = item.postNo;
+                    postRole[i] = item.postRole;
                     var date = timestamp(item.postCreatedAt);
                     createAt[i] = date;
 
@@ -583,6 +591,7 @@ $(document).ready(function ($) {
 
                     content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
+                  <span style="display: none">${postRole[id-1]}</span>
                   <span class="content_postNO" style="display: none">${postNO[id -1]}</span>
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
@@ -689,7 +698,7 @@ $(document).ready(function ($) {
         var s2 =td.eq(0).text();
         console.log(s);
         console.log(s2);
-        if(s2 == '멘토'){
+        if(s2 == "멘토"){
             sessionStorage.setItem('postNo',s);
             window.location.href="http://dormabook.shop/viewmento"
         }else{
