@@ -1,15 +1,36 @@
 $(document).ready(function ($) {
     var token = sessionStorage.getItem('jwt');
+    var parseJwt;
+
     if(!token){
         alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
         window.location.href = "https://dormabook.shop"
+    } else{
+        parseJwt = JSON.parse(Base64.decode(token.toString().split('.')[1]));
     }
-    // console.log(Base64.decode(token.toString().split('.')[1]));
-    // var parseJwt = JSON.parse(Base64.decode(token.toString().split('.')[1]));
 
     var a = "";
     var trHTML = '';
-    // var data = "권한 : " + parseJwt.memberPermission + '<br>핸드폰 번호 : ' + parseJwt.memberPhone+ '<br>학번 : ' + parseJwt.memberStudentId;
+    var memberName = parseJwt.memberName;
+
+    document.getElementById('member-name').innerText = (memberName+' 님');
+
+    $.ajax({
+        type: "GET",
+        // url: "https://dormabook.shop/api/post/community/profile",
+        url: "http://localhost:9000/api/post/community/profile",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        success: function (data) {
+            document.getElementById("post-count").innerText = data[0].count;
+            document.getElementById("notice-count").innerText = data[1].count;
+        },
+        error: function () {
+            //
+        }
+    });
+
     $("#mentee_postList").empty();
     $("#mento_postList").empty();
     // $('#mentee_postList').append(data);
