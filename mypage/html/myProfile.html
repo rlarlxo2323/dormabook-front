@@ -25,9 +25,9 @@
             </a>
         </header>
         <nav class="nav1">
-            <a class="a1" href="#">커뮤니티 홈</a>
-            <a class="a2" href="#">글 전체</a>
-            <a class="a3" href="#">MY 프로필</a>
+            <a class="a1" href="https://dormabook.shop/community">커뮤니티 홈</a>
+            <a class="a2" href="https://dormabook.shop/postlist">글 전체</a>
+            <a class="a3">마이페이지</a>
         </nav>
         <hr class="liner">
 
@@ -35,27 +35,29 @@
             <div style="width: 100%">
                 <div class="userInfo">
                     <div style="display: flex; flex-wrap: nowrap;">
-                        <div style="flex: 1 0 0; text-align: left; font-size: 30px;">안대현님</div>
+                        <div style="flex: 1 0 0; text-align: left; font-size: 30px;" id="userName">안대현님</div>
                         <div style="flex: 1 0 0; text-align: right">
-                            <button type="button" class="modifyBtn">프로필 수정</button>
+                            <button type="button" class="modifyBtn" id="modifyBtn">프로필 수정</button>
                         </div>
                     </div>
 
-                    <div style="flex: 1 auto;">
-                        <div style="text-align: left; margin: 10px 0">
-                            안녕하세요! 제가 습득한 지식을 나누고 싶은 컴소 17학번입니다.(여기최대255글자)
-                        </div>
+                    <div style="flex: 1 auto; padding: 10px 10px;">
+
+                        <textarea readonly style="resize: none; width: 100%; height: 100%;" id="intro">
+안녕하세요! 제가 습득한 지식을 나누고 싶은 컴소 17학번입니다.
+                        </textarea>
+
                     </div>
 
                     <div style="display: flex; flex-wrap: nowrap;">
                         <div style="flex: 5 0; display: flex; flex-direction: column;">
                             <div style="text-align: left;">
-                                <div class="major1" style="display: inline-block;">
+                                <div class="major1" style="display: inline-block;" id="college">
                                     ICT 공과 대학
                                 </div>
                             </div>
                             <div style="text-align: left;">
-                                <div class="major1" style="display: inline-block;">
+                                <div class="major1" style="display: inline-block;" id="major">
                                     컴소공
                                 </div>
                             </div>
@@ -64,7 +66,7 @@
                             <div style="flex: 1 auto; text-align: right; margin-right: 10px">
                                 보유 포인트 :
                             </div>
-                            <div style="flex: 1 auto; text-align: left; color: #00C473; font-weight: bold;">
+                            <div style="flex: 1 auto; text-align: left; color: #00C473; font-weight: bold;" id="point">
                                 2000
                             </div>
                         </div>
@@ -119,14 +121,54 @@
                             </div>
 
                             <div id="t2_postBody" style="flex-grow: 4; display: flex; align-items: center;">
-                                <div style="width: 100%; font-size: 20px;">
-                                    멘토-멘티 프로그램에 <br><br>
-                                    참여하기 위해<br><br>
-                                    팀원 신청을 해보세요.
+                                <div style="width: 100%; font-size: 20px; height: 100%;">
+
+                                    <div id="modal" class="modal-overlay">
+                                        <div class="modal-window">
+                                            <div class="title">
+                                                <h2>신청서</h2>
+                                            </div>
+                                            <div class="close-area">X</div>
+                                            <div class="modal-form">
+                                                <div class ="modal-header">
+                                                    <div style="display: flex; font-weight: bold">
+                                                        <div style="flex: 1 auto; display: flex; text-align: left; flex-direction: column;">
+                                                            <div style="flex: 1 auto;" id="name">김기태</div>
+                                                            <div style="flex: 1 auto;" id="id">rlarlxo2323</div>
+                                                        </div>
+                                                        <div style="flex: 1 auto; display: flex; text-align: right; flex-direction: column;">
+                                                            <div style="flex: 1 auto;" id="userMajor">ICT공대</div>
+                                                            <div style="flex: 1 auto;" id="userDepartment">컴쏘공</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-body">
+                                                        <textarea id="text" style="height: 100%; width: 100%; resize: none;
+                                                        border: white solid 0; border-radius: 10px; font-size: 20px;" readonly>
+                                                            adsfasdfafadf
+                                                        </textarea>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="Yes" class="Yes">승락</button>
+                                                    <button id="No" class="No">거절</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <ul id="t2_contents" class="t2_contents">
+
+                                    </ul>
+                                    <div id="t2_postBody-text">
+                                        멘토-멘티 프로그램에 <br><br>
+                                        참여하기 위해<br><br>
+                                        팀원 신청을 해보세요.
+                                    </div>
                                 </div>
                             </div>
 
-                            <div id="t2_postFooter" style="flex-grow: 1;">
+                            <div id="t2_postFooter" class="t2_postFooter" style="flex-grow: 1;">
                             </div>
                         </div>
                     </div>
@@ -142,9 +184,6 @@
                             </div>
 
                             <div id="t3_postBody" style="flex-grow: 4; display: flex; align-items: center;">
-                                <form action="https://class.dormabook.shop/video-chat" method="get">
-                                    <button type="submit">gogogo</button>
-                                </form>
                                 <div style="width: 100%; font-size: 20px; height: 100%;">
                                     <ul id="t3_contents" class="t3_contents">
 
@@ -168,8 +207,8 @@
 
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.6.1/base64.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="../mypage/js/myProfile.js"></script>
+<script type="text/javascript" src="../js/myProfile.js"></script>
 </body>
 </html>
