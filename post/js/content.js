@@ -1,4 +1,5 @@
 $(document).ready(function ($) {
+
     var token = sessionStorage.getItem('jwt');
     if (!token) {
         alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
@@ -8,15 +9,19 @@ $(document).ready(function ($) {
     $("#content__title").empty();
     $("#content__matchState").empty();
     $("#content__date").empty();
+
     var post_url = "https://dormabook.shop/api/post/post_list/all";
-    // https://dormabook.shop/api/post/post_list/all
-    // http://localhost:8080/api/post/post_list/all
+
+
+
     $('#comunity_home').click(function () {
         window.location.href = "https://dormabook.shop/community";
     })
     $('#post_list').click(function () {
         window.location.href = "https://dormabook.shop/postlist";
     })
+
+
     // $('#my_profile').click(function (){
     //     window.location.href = "http://localhost:63342/dormabook-front/front/mypage/html/myProfile.html?_ijt=e9mqrjp9mj8qnnricf75soii9v&_ij_reload=RELOAD_ON_SAVE";
     // })
@@ -41,6 +46,7 @@ $(document).ready(function ($) {
             var matchState = [];
             var createAt = [];
             var postNO = [];
+            var postRole = [];
             document.getElementById("post_count").innerText = "전체 게시글 : " + numOfContent + " 건";
             document.getElementById("load_post").style.backgroundColor = "#00C473";
             document.getElementById("load_post").style.color = "white";
@@ -61,6 +67,7 @@ $(document).ready(function ($) {
                 title[i] = item.postTitle;
                 matchState[i] = item.postMatchState;
                 postNO[i] = item.postNo;
+                postRole[i] = item.postRole;
                 var date = timestamp(item.postCreatedAt);
                 createAt[i] = date;
 
@@ -84,6 +91,7 @@ $(document).ready(function ($) {
 
                 content.innerHTML = `
                   <!--    <span class="content__id">${id}</span>-->
+                  <span style="display: none">${postRole[id-1]}</span>
                   <span class="content_postNO" style="display: none">${postNO[id - 1]}</span>
                   <span class="content__title" id="content__title">${title[id - 1]}</span>
                   `;
@@ -180,10 +188,10 @@ $(document).ready(function ($) {
 
     });
 
+
+
     $('#load_post').click(function () {
         post_url = "https://dormabook.shop/api/post/post_list/all";
-        //https://dormabook.shop/api/post/post_list/all
-        //http://localhost:8080/api/post/post_list/all
         console.log(post_url);
         $.ajax({
             type: "GET",
@@ -347,8 +355,6 @@ $(document).ready(function ($) {
     })
     $('#load_mentopost').click(function () {
         post_url = "https://dormabook.shop/api/post/post_list?" + $.param({"postRule": "멘토"});
-        //https://dormabook.shop/api/post/post_list/all
-        //http://localhost:8080/api/post/post_list
         console.log(post_url);
         $.ajax({
             type: "GET",
@@ -513,8 +519,6 @@ $(document).ready(function ($) {
     })
     $('#load_menteepost').click(function () {
         post_url = "https://dormabook.shop/api/post/post_list?" + $.param({"postRule": "멘티"});
-        //https://dormabook.shop
-        //http://localhost:8080/api/post/post_list
         console.log(post_url);
         $.ajax({
             type: "GET",
@@ -676,13 +680,33 @@ $(document).ready(function ($) {
         });
 
     })
+
+    //게시글 상세 조회로 이동
     $(document).on("click",".contents lli", function (){
         var a = $(this);
         var td = a.children();
-        var s = td.eq(0).text();
+        var s = td.eq(1).text();
+        var s2 =td.eq(0).text();
         console.log(s);
-        sessionStorage.setItem('postNo',s);
+        console.log(s2);
+        if(s2 == '멘토'){
+            sessionStorage.setItem('postNo',s);
+            // 멘토 게시글.html 로 가기; todo: 아래 작성 중
+            window.location.href="http://dormabook.shop/"
+        }else{
+            sessionStorage.setItem('postNo',s);
+            // 멘토 게시글.html 로 가기; todo: 아래 작성 중
+            window.location.href="http://dormabook.shop/"
+        }
     })
 
-
+    $('#comunity_home').click(function (){
+        window.location.href = "https://dormabook.shop/community";
+    })
+    $('#post_list').click(function (){
+        window.location.href = "https://dormabook.shop/postlist";
+    })
+    $('#my_profile').click(function (){
+        window.location.href = "https://dormabook.shop/mypage";
+    })
 })

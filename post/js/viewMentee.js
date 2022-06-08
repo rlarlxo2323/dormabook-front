@@ -10,8 +10,8 @@ $(document).ready(function ($) {
     $("#post__created_at").empty();
     $("#post__match_state").empty();
     $("#post__content").empty();
-    var postNO = 1; //테스트 코드
-    var post_url = "https://dormabook.shop/api/post/mentee_post?" + $.param({"postNo": getpostNO});
+    // var postNO = 13; //테스트 코드
+    var post_url = "https://dormabook.shop/api/post/mentee_post?" + $.param({"postNo": postNO});
 
     function timestamp(a) {
         var today = new Date(a);
@@ -45,4 +45,17 @@ $(document).ready(function ($) {
         }
 
     });
+})
+function back(){
+    window.history.back();
+}
+
+$('#comunity_home').click(function (){
+    window.location.href = "https://dormabook.shop/community";
+})
+$('#post_list').click(function (){
+    window.location.href = "https://dormabook.shop/postlist";
+})
+$('#my_profile').click(function (){
+    window.location.href = "https://dormabook.shop/mypage";
 })

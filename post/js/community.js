@@ -15,7 +15,6 @@ $(document).ready(function ($) {
     // $('#mentee_postList').append(data);
     $.ajax({
         type: "GET",
-        // url: "http://localhost:8080/api/post/community/postlist?" + $.param({"postRule": "멘티"}),
         url: "https://dormabook.shop/api/post/community/postlist?" + $.param({"postRule": "멘티"}),
         beforeSend: function (xhr){
             xhr.setRequestHeader("Authorization",token);
@@ -49,7 +48,6 @@ $(document).ready(function ($) {
             var no = td.eq(2).text();
             sessionStorage.setItem('postNo',no);
 
-
             //게시글 uri 넣기;
         console.log(no);
     })
@@ -66,7 +64,6 @@ $(document).ready(function ($) {
     var trHTML1 = '';
     $.ajax({
         type: "GET",
-        // url: "http://localhost:8080/api/post/community/postlist?" + $.param({"postRule": "멘토"}),
         url: "https://dormabook.shop/api/post/community/postlist?" + $.param({"postRule": "멘토"}),
         beforeSend: function (xhr){
             xhr.setRequestHeader("Authorization",token);
@@ -99,8 +96,8 @@ $(document).ready(function ($) {
     $('#post_list').click(function (){
         window.location.href = "https://dormabook.shop/postlist";
     })
-    // $('#my_profile').click(function (){
-    //     window.location.href = "http://localhost:63342/dormabook-front/front/mypage/html/myProfile.html?_ijt=e9mqrjp9mj8qnnricf75soii9v&_ij_reload=RELOAD_ON_SAVE";
-    // })
+    $('#my_profile').click(function (){
+        window.location.href = "https://dormabook.shop/mypage";
+    })
 })
 

@@ -25,51 +25,60 @@
         <input type="text" maxlength="255" placeholder="제목, 키워드로 검색하세요.">
         <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
     </div>
+    <script type="text/javascript">
+        var token = sessionStorage.getItem('jwt');
+        if (!token) {
+            alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
+            window.location.href = "https://dormabook.shop"
+        }
+    </script>
 </header>
 <nav>
-    <a class="a1" href="#">커뮤니티 홈</a>
-    <a class="a2" href="#">글 전체</a>
-    <a class="a3" href="#">MY 프로필</a>
+    <a class="a1" href="#" id="comunity_home">커뮤니티 홈</a>
+    <a class="a2" href="#" id="post_list">글 전체</a>
+    <a class="a3" href="#" id="my_profile">MY 프로필</a>
 </nav>
 
 <div id="container" role="main">
     <div class="btn_group">
-        <button class="mentor" onclick="location.href='writing.html'">멘토</button>
-        <button class="mentee" onclick="location.href='writing2.html'">멘티</button>
+        <button class="mentor" onclick="window.location.href='postMentor.html'">멘토</button>
+        <button class="mentee" onclick="window.location.href='postMentee.html'">멘티</button>
     </div>
+    <form action="#" method="post" enctype="multipart/form-data" id="form">
+        <div class="title">
+            <input type="text" maxlength="250" placeholder="제목을 입력해주세요." id="title" required>
+        </div>
 
-    <div class="title">
-        <input type="text" maxlength="250" placeholder="제목을 입력해주세요.">
-    </div>
+        <div class="subject">
+            <input type="text" maxlength="100" placeholder="과목명을 입력해주세요." id="subject" required>
+        </div>
 
-    <div class="subject">
-        <input type="text" maxlength="100" placeholder="과목명을 입력해주세요.">
-    </div>
-
-    <div class="bookname">
-        <input type="text" maxlength="100" placeholder="책 이름을 입력해주세요.">
-    </div>
-    <div class="content">
-            <textarea rows="5" cols="30" wrap="hard" maxlength="1000"
-                      placeholder="내용을 입력하세요. &#13;&#10;&#13;&#10;&#13;&#10;등록한 글은 사용자의 이름으로 등록됩니다.">내용을 입력하세요.</textarea>
-    </div>
-    <div class="btn_group2">
-        <form action="post" enctype="multipart/form-data">
+        <div class="bookname">
+            <input type="text" maxlength="100" placeholder="책 이름을 입력해주세요." id="bookname" required>
+        </div>
+        <div class="content">
+            <textarea rows="5" cols="30" wrap="hard" maxlength="1000" id="content" required
+                      placeholder="내용을 입력하세요. &#13;&#10;&#13;&#10;&#13;&#10;등록한 글은 사용자의 이름으로 등록됩니다."></textarea>
+        </div>
+        <div class="btn_group2">
+            <!--        <form action="post" enctype="multipart/form-data" id="form">-->
             <div class="button">
                 <label for="image_upload">이미지 업로드</label>
             </div>
             <div class="button">
                 <label for="result_upload">성적 증명서 업로드</label>
             </div>
-            <input class="image" type="file" name="image_upload" id="image_upload" accept="image/*"
-                   onchange="loadFile(this)">
-            <input class="result" type="file" name="result_upload" id="result_upload" accept="application/**"
-                   onchange="loadFile(this)">
-        </form>
-    </div>
-    <div class="btn">
-        <button class="upload">게시글 작성</button>
-    </div>
+            <input class="image" type="file" name="image_upload" id="image_upload">
+            <input class="result" type="file" name="result_upload" id="result_upload" required>
+            <!--        </form>-->
+        </div>
+        <div class="btn">
+            <button type="button" class="upload" id="upload">게시글 작성</button>
+        </div>
+    </form>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/post/js/postMentor.js"></script>
 </div>
 </body>
 </html>

@@ -16,6 +16,8 @@
             }
         }
     </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/post/js/viewMentor.js"></script>
 </head>
 <body>
     <header>
@@ -28,39 +30,31 @@
         </div>
     </header>
     <nav>
-          <a class="a1" href="#">커뮤니티 홈</a>
-          <a class="a2" href="#">글 전체</a>
-          <a class="a3" href="#">MY 프로필</a>
+        <a class="a1" href="#" id="comunity_home">커뮤니티 홈</a>
+        <a class="a2" href="#" id="post_list">글 전체</a>
+        <a class="a3" href="#" id="my_profile">MY 프로필</a>
     </nav>
 
     <div id="container" role="main">
         <div class="back">
-            <button class="back_btn">
+            <button class="back_btn" onclick="back()">
                 < 뒤로 가기
             </button>
         </div>
         <article>
             <div class="text">
                 <div class="title">
-                <h3>객체지향설계 잘 가르쳐드릴 자신 있습니다!</h3>
+                <h3 id="post__title"></h3>
                 </div>
-                <div class="info">
-                안대현
-                    <div class="date">
-                    2022.06.05 05:42
-                    </div>
+                <div class="info" id="user__name" style="display: flex;"></div>
+                <div class="date" id="post__created_at"></div>
                     <div class="span_group">
                         <span class="span1">성적 인증 완료</span>
-                        <span class="span2">매칭 중</span> 
+                        <span class="span2" id="post__match_state"></span>
                     </div> 
-                </div>       
-                <div class="content">
-                작년 전공 수업으로 객체지행설계 과목을 수강하였고, 해당 과목 A+ 받았습니다!
-                멘토, 멘티 프로그램에 멘토로 참여한 적이 있기 때문에 잘 가르쳐드릴 자신있어요!
-                </div>
-                <div class="image">
-                    <img src="./image/book.png">                               
-                </div>
+
+                <div class="content" id="post__content"></div>
+                <div class="image" id="book__image"></div>
                 <div class="sign_up">
                     <button class="sign" onclick="new_window();">팀원 신청</button>
                 </div>

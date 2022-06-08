@@ -4,58 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/postMentee.css" />
+    <link rel="stylesheet" href="../../css/postMentee.css"/>
     <title>도르마북 | 게시글 작성 | 멘티</title>
 
     <style>
         /*반응형 웹*/
-        @media all and (max-width: 600px){
-            #container, nav{
+        @media all and (max-width: 600px) {
+            #container, nav {
                 flex-direction: column;
             }
         }
     </style>
+    <script type="text/javascript">
+        var token = sessionStorage.getItem('jwt');
+        if (!token) {
+            alert('로그인이 되어 있지 않거나, 비정상적인 접근입니다.');
+            window.location.href = "https://dormabook.shop"
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <a href="#">
-            <img src="../../images/logo_image.png" class="img_logo">
-        </a>
-        <div class="search">
-            <input type="text" maxlength="255" placeholder="제목, 키워드로 검색하세요.">
-            <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-        </div>
-    </header>
-    <nav>
-          <a class="a1" href="#">커뮤니티 홈</a>
-          <a class="a2" href="#">글 전체</a>
-          <a class="a3" href="#">MY 프로필</a>
-    </nav>
-    
-    <div id="container" role="main">
-        <div class="btn_group">
-            <button class="mentor" id="mentor">멘토</button>
-            <button class="mentee" id="mentee">멘티</button>
-        </div>
+<header>
+    <a href="#">
+        <img src="../../images/logo_image.png" class="img_logo">
+    </a>
+    <div class="search">
+        <input type="text" maxlength="255" placeholder="제목, 키워드로 검색하세요.">
+        <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+    </div>
+</header>
+<nav>
+    <a class="a1" href="#" id="comunity_home">커뮤니티 홈</a>
+    <a class="a2" href="#" id="post_list">글 전체</a>
+    <a class="a3" href="#" id="my_profile">MY 프로필</a>
+</nav>
 
+<div id="container" role="main">
+    <div class="btn_group">
+        <button class="mentor" onclick="window.location.href='postMentor.html'">멘토</button>
+        <button class="mentee" onclick="window.location.href='postMentee.html'">멘티</button>
+    </div>
+    <form action="#" method="post" id="form">
         <div class="title">
-            <input type="text" maxlength="250" placeholder="제목을 입력해주세요.">
+            <input type="text" maxlength="250" id="title" placeholder="제목을 입력해주세요.">
         </div>
 
         <div class="subject">
-            <input type="text" maxlength="100" placeholder="과목명을 입력해주세요.">
+            <input type="text" maxlength="100" id="subject" placeholder="과목명을 입력해주세요.">
         </div>
 
         <div class="subject">
-            <input type="text" maxlength="100" placeholder="책 이름을 입력해주세요.">
+            <input type="text" maxlength="100" id="bookname" placeholder="책 이름을 입력해주세요.">
         </div>
         <div class="content">
-            <textarea rows="5" cols="30" wrap="hard" maxlength="1000" style="resize: none;"
-            placeholder="내용을 입력하세요. &#10;&#10;등록한 글은 사용자의 이름으로 등록됩니다."></textarea>
+            <textarea rows="5" cols="30" wrap="hard" maxlength="1000" style="resize: none;" id="content"
+                      placeholder="내용을 입력하세요. &#10;&#10;등록한 글은 사용자의 이름으로 등록됩니다."></textarea>
         </div>
         <div class="btn">
-            <button class="upload">게시글 작성</button>
+            <button type="button" class="upload" id="upload">게시글 작성</button>
         </div>
-    </div>
+    </form>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/post/js/postMentee.js"></script>
+</div>
 </body>
 </html>
