@@ -130,13 +130,13 @@ nav a{
 .modifyBtn{
     flex: 1 0 0;
     text-align: center;
+    color: white;
 
     width: 140px;
     height: 100%;
     font-size: 16px;
 
-    background: #FFFFFF;
-    border: 1px solid #AAAAAA;
+    background: #00C473;
     border-radius: 10px;
 
 }
@@ -239,7 +239,6 @@ table.type03 td {
     color: white;
     cursor: pointer;
     background-color: #00C473;
-    margin-left: 10px;
 }
 .btn-submit:hover {
     background-color: green;
@@ -258,7 +257,6 @@ table.type03 td {
     color: white;
     cursor: pointer;
     background-color: #00C473;
-    margin-left: 10px;
 }
 .btn-redirect:hover {
     background-color: green;
@@ -278,20 +276,35 @@ table.type03 td {
     left: 333px;
     top: 455px;
 }
+.content__matchState,
+.content__id,
+.content__date {
+
+    /*flex-basis: 10%;*/
+}
 
 .content__title {
     font-size: large;
     flex: 40%;
     text-align: left;
+    /*overflow: hidden;*/
     white-space: nowrap;
     text-overflow: ellipsis;
+    /*padding-left: 10%;*/
+    /*width: 700px;*/
+    /*height: 30px;*/
+    /*left: 333px;*/
+    /*top: 455px;*/
 }
 
 .content__matchState{
     width: 300px;
+    /*flex: 20;*/
     padding-top: 2.77%;
+    /*padding-left: 10%;*/
     text-align: left;
     overflow: hidden;
+    /*white-space: nowrap;*/
     text-overflow: ellipsis;
 }
 .content__date {
@@ -320,4 +333,148 @@ table.type03 td {
     /*list-style: none;*/
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     flex-direction: row;
+}
+
+.content_2 {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+}
+.content__postTitle {
+    height: 60px;
+    font-size: large;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+.content__formBtn {
+    display: inline-block;
+}
+.content__postDate {
+    flex: 1 auto;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.secondDiv{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+#modal.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#modal .modal-window {
+    background: rgba( 211, 211, 211, 0.9 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 600px;
+    height: 500px;
+    position: relative;
+    top: -100px;
+    padding: 10px;
+}
+#modal .title {
+    padding-left: 10px;
+    display: inline;
+    text-shadow: 1px 1px 2px gray;
+    color: black;
+
+}
+#modal .title h2 {
+    display: inline;
+}
+#modal .close-area {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+}
+
+#modal .modal-form{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    margin-top: 20px;
+}
+
+#modal .content {
+    border: black solid 1px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 20px;
+    padding: 0 10px;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+}
+
+#modal .modal-header {
+    flex: 1 10px;
+    margin: 0 20px;
+    vertical-align: middle;
+}
+
+#modal .modal-body {
+    flex: 5 auto;
+    border-radius: 10px;
+    border: white solid 1px;
+    background-color: white;
+}
+
+#modal .modal-footer {
+    flex: 1 10px;
+    align-items: end;
+    padding-top: 30px;
+}
+
+#Yes{
+    background-color: #00C473;
+    text-align: center;
+    color: white;
+    width: 80px;
+    height: 100%;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+#Yes:hover{
+    border: solid 3px green;
+    color: white;
+    background-color: green;
+}
+
+#No{
+    background-color: #C42F14;
+    text-align: center;
+    color: white;
+    width: 80px;
+    height: 100%;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+#No:hover{
+    border: solid 3px darkred;
+    color: white;
+    background-color: darkred;
 }
