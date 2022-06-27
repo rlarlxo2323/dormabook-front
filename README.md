@@ -81,34 +81,34 @@
 ## 4. 설계
 ### 디자인 설계
 1. 홈 화면 및 로그인 관련 기능  
-![홈](readme-image/홈화면.png)
+![홈](rdm-image/홈화면.png)
 
 2. 커뮤니티 기능
-![커뮤니티기능](readme-image/커뮤니티.png)
+![커뮤니티기능](rdm-image/커뮤니티.png)
 
 3. 마이페이지 기능
-![마이페이지기능](readme-image/마이페이지.png)
+![마이페이지기능](rdm-image/마이페이지.png)
 
 4. 학습실 기능
-![마이페이지기능](readme-image/스터디룸.png)
+![마이페이지기능](rdm-image/스터디룸.png)
 
 ### 서버 아키텍쳐
 #### 전체 서버 아키텍처
-![서버 아키텍쳐](readme-image/서버아키텍처.png)
+![서버 아키텍쳐](rdm-image/서버아키텍처.png)
 
 #### WebRTC 서버 아키텍처
-![서버 아키텍쳐](readme-image/webrtc.png)
+![서버 아키텍쳐](rdm-image/webrtc.png)
 
 ### DB 설계
 #### 홈, 커뮤니티 관련 ERD
-![DB설계](readme-image/홈ERD.png)
+![DB설계](rdm-image/홈ERD.png)
 
 #### 학습실 관련 ERD
-![DB설계](readme-image/학습실ERD.png)
+![DB설계](rdm-image/학습실ERD.png)
 
 ### API 설계
 #### API 리스트
-![API](readme-image/API리스트.png)
+![API](rdm-image/API리스트.png)
 
 ## 5. 시연 영상
 [![Video Label](https://img.youtube.com/vi/t9yxZY42YiI/0.jpg)](https://youtu.be/t9yxZY42YiI)  
